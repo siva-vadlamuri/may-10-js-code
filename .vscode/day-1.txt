@@ -1,0 +1,14 @@
+Variable : Variable is used to store information which we can use it in future.
+
+JavaScript is syncronous single threaded language
+How to declare a varible
+
+Data Types:
+Which type of Data we are assigning
+1)Number
+2) strings
+3) Boolean
+4) undefined
+5) null
+6) Array
+7) Objects  

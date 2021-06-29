@@ -1,0 +1,10 @@
+JavaScript is Synchronous Single threaded language
+Asynchronous JavaScript And XML/ JSON
+
+API --> Application Programming Interface
+
+
+
+
+
+UI --> User Interface

@@ -43,6 +43,10 @@ lastName.onblur = function () {
 lastName.onchange = function () {
   console.log(lastName.value);
 };
+// Blocking code --> Synchronous 
+// non blocking code --> asynchronous
+// what code we need to make asynchronous
+
 
 window.onresize = function () {
   let height = document.getElementById("height");

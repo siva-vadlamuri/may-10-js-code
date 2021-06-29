@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <script>
+      //   let promp = new Promise(function (resolve, reject) {
+      //     //  You want to loose 5kgs in 1 months
+      //     // after 1 month if you loose 5kgs your promise was fullifiled
+      //     //  if you didnt loose the 5kgs your rejected your Promises
+      //     let weight = 70;
+      //     weight = 70;
+      //     if (weight <= 65) {
+      //       resolve("Your promise was resolved ");
+      //     } else {
+      //       reject("Your promise was rejected");
+      //     }
+      //   });
+
+      //   promp
+      //     .then(function (message) {
+      //       console.log(message);
+      //     })
+      //     .catch(function (message) {
+      //       console.log(message);
+      //     });
+
+      //   for (let i = 0; i < 10; i++) {
+      //     console.log(i);
+      //   }
+
+      // fetch()
+
+      //   const URL = "http://jsonplaceholder.typicode.com/users";
+      //   let result = fetch(URL);
+      //   result
+      //     .then(function (data) {
+      //       data.json().then(function (response) {
+      //         console.log(response);
+      //       });
+      //     })
+      //     .catch(function (err) {
+      //       console.log(err);
+      //     });
+
+      // es7 async and await async
+      async function getData() {
+        try {
+          let result = await fetch("http://jsonplaceholder.typicode.com/users");
+
+          let response = await result.json();
+        } catch (err) {
+          console.log(err);
+        }
+        
+      }
+      getData();
+    </script>
+  </body>
+</html>

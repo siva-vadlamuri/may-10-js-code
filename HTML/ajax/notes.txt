@@ -8,3 +8,5 @@ API --> Application Programming Interface
 
 
 UI --> User Interface
+
+Promise

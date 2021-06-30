@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../../css/signup.css" />
+    <!-- <style>
+      body {
+        height: 500vh;
+      }
+      .parent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      p {
+        border: 1px solid black;
+        background-color: #ccc;
+        padding: 20px;
+        margin: 50px;
+      }
+    </style> -->
+  </head>
+  <body>
+    <div id="login-box">
+      <div class="left">
+        <h1>Sign up</h1>
+        <form autocomplete="off">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+          />
+          <p id="usernameErr" class="hide"></p>
+
+          <input
+            autocomplete="off"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="E-mail"
+          />
+
+          <input type="number" name="phone" id="phone" />
+          <p id="emailErr" class="hide"></p>
+          <input
+            autocomplete="off"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+          <p class="hide" id="passwordErr"></p>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="password2"
+            placeholder="Retype password"
+          />
+          <p class="hide" id="confirmPasswordErr"></p>
+          <input
+            type="button"
+            id="submit"
+            name="signup_submit"
+            value="Sign me up"
+          />
+          <p id="successMsg"></p>
+        </form>
+      </div>
+    </div>
+
+    <button id="btn"></button>
+
+    <script>
+      // const URL = http://localhost:3001/register
+
+      //   Steps to follow
+      // 1st we need to collect the data which user entry
+      // 2nd We need convert the data into object
+      // 3rd we need to send the data to the server
+      const submit = document.getElementById("submit");
+
+      submit.addEventListener("click", function () {
+        let username = document.getElementById("username");
+        let email = document.getElementById("email");
+        let phone = document.getElementById("phone");
+        let password = document.getElementById("password");
+        convertIntoObject(
+          username.value,
+          email.value,
+          phone.value,
+          password.value
+        );
+      });
+      function convertIntoObject(username, email, number, password) {
+        let obj = {
+          username,
+          email,
+          number,
+          password,
+        };
+        // console.log(obj);
+        // console.log(JSON.stringify(obj));
+        sendDataToServer(obj);
+      }
+      async function sendDataToServer(obj) {
+        let result = await fetch("http://localhost:3001/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(obj),
+        }).then(function (response) {
+          response.text().then(function (result) {
+            console.log(result);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

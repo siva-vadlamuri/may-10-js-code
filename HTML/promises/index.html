@@ -49,15 +49,26 @@
 
       // es7 async and await async
       async function getData() {
+        let userObj = {
+          email: "siva127@gmail.com",
+          password: "1234567",
+        };
         try {
-          let result = await fetch("http://jsonplaceholder.typicode.com/users");
+          let result = await fetch("http://localhost:3001/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userObj),
+          });
 
           let response = await result.json();
+          console.log(response);
         } catch (err) {
           console.log(err);
         }
-        
       }
+
       getData();
     </script>
   </body>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ES 6 Concepts</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- ES6 ECMA2015 -->
     <!-- Let, const -->
     <!-- Promsies -->
@@ -16,6 +16,160 @@
     <!-- Rest and Spreed operators -->
     <!-- Classes  -->
     <!-- Arrow Functions -->
-    <!-- Template literal -->  
-</body>
+    <!-- Template literal -->
+
+    <!-- var, let, and const -->
+    <script>
+      var myButton = "Signup button";
+      var myButton = "login button";
+      console.log(myButton);
+
+      //   if (true) {
+      // //     let isLogin = true;
+      // //   }
+      // //   console.log(isLogin);
+      // //   When var is global scope and when var variable is function scope
+      // //   var myNumber = 999999999;
+
+      // //   function myFunc() {
+      // //     var address = "Bangalore";
+      // //   }
+      // //   console.log(address);
+      // //   myFunc();
+
+      // let result = 20;
+      // result = 20;
+
+      // const myName = "Shiva";
+
+      // //   let calculateSum = function (a, b) {
+      // //     console.log(a + b);
+      // //   };
+      // //   calculateSum(20, 30);
+
+      // //   //   Arrow Functions
+
+      // //   const calculateSum = (a, b) => {
+      // //     console.log(a + b);
+      // //   };
+      // //   calculateSum(23, 56);
+      // // Rules of Const
+      // const phone = 9999999;
+      // // Once you declared you cant change
+      // // Numbers, string, null, undefined
+      // //Arrays, Objects,
+      // // Object.freeze()
+      // // const [firstNum,second] = [10,20];
+      // // firstNum = 40;
+      // // console.log(firstNum);
+
+      // const squareOfTheNumber = (num) => console.log(num * num);
+
+      // // Fat arrow function
+      // squareOfTheNumber(20);
+
+      // //   Destructuring
+      // // Array Destructuring [], [ [], [] ]
+      // // Object  {}, { {{}},{},{} }
+
+      // let arr = [23, 56, 78, 90, 53, 89];
+      // const [, , thirdNum, fourthNum] = arr;
+      // console.log(thirdNum, fourthNum);
+
+      // let objj = {
+      //   firstName: "Mr",
+      //   lastName: "John",
+      //   address: {
+      //     streetName: "276 B block",
+      //     location: "BTM layout",
+      //     locations: {
+      //       longitude: "xxxxxxx",
+      //       latitude: "xxxxxxxx",
+      //     },
+      //   },
+      // };
+      // console.log(objj.address.location);
+      // const {
+      //   address: { locations },
+      // } = objj;
+      // console.log(locations);
+
+      // const useState = (intialValue) => {
+      //   let state = intialValue;
+      //   function setState(data) {
+      //     return (this.state = data);
+      //   }
+      //   return [state, setState];
+      // };
+
+      // const [state, setState] = useState(0);
+      // // state = 30;
+      // console.log(state);
+      // console.log(state);
+      // console.log(setState(10));
+
+      // // Spreed and Rest Operators
+      // // ...
+
+      // // Rest Operator
+      // // You can pass infinite number of arguments to Functions
+
+      // function calculateTheSum(...params) {
+      //   console.log(params);
+      //   // return a + b;
+      // }
+
+      // console.log(calculateTheSum(12, 34, 98, 89, 78, 97, 99, 12));
+
+      function sumOfTheNumber(...arr) {
+        //Rest Params
+        // for of
+        let total = 0;
+        for (let value of arr) {
+          total += value;
+        }
+        return total;
+      }
+      let arr1 = [1, 2, 3, 4, 5];
+      // // Spreed the elements
+      sumOfTheNumber(...arr1, 23);
+      // Spreed Operator
+      let arr2 = [34, 67, 89];
+      let arr3 = [67, 90, 98, 78];
+
+      let finalArr = [...arr2, ...arr3];
+      console.log(finalArr);
+
+      let Obj = {
+        firstName: "Mr",
+        lastName: "Sharma",
+        address: "Bangalore",
+      };
+
+      let add = {
+        address: "Hyderbad",
+      };
+
+      let finalObj = { ...Obj, ...add };
+      console.log(finalObj);
+      // console.log();
+
+      let firstName = "Mr";
+      let lastName = "Sharma";
+      let emailId = "test@example.com";
+
+      let myString = `my first name is ${firstName.toLowerCase()} and my last name is ${lastName.toLowerCase()}
+      and my email id is ${emailId.toLowerCase()}
+      
+      `;
+
+      // Readibility
+      // Modularity it is better for maintaince and fixing the bugs that
+      //  Clean Code uncle bob
+      //  Manitaniable
+      // DRY
+
+      console.log(myString);
+    </script>
+  </body>
 </html>

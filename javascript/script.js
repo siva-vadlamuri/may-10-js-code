@@ -71,3 +71,39 @@ if (true) {
 console.log(myNumbers);
 // let and const are block scoped variable
 // scope is nothing but accessiblity
+
+let objj = {
+  id: 1,
+  name: "Akash",
+  age: 19,
+  address: {
+    Street: "6th Main ",
+    location: "BTM Layout",
+    nearBy: "BTM Water tank",
+    locations: {
+      longitude: "xxxxxxxxx",
+      latitude: "xxxxxxxxxx",
+    },
+  },
+};
+
+const {
+  address: { locations },
+} = objj;
+console.log(locations);
+
+function useState(intital) {
+  let state = intital;
+  const setState = (data) => {
+    this.state = data;
+    return this.state;
+  }; 
+  return [state, setState];
+}
+
+const [state, setState] = useState(0);
+console.log(state, setState);
+
+let updatedValue = setState(10);
+console.log(updatedValue);
+// console.log(state);

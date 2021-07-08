@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Behind the Scens</title>
+  </head>
+  <body>
+    <h1>Behind the Scens</h1>
+
+    <script>
+      // debugger;
+      let myCarName = "BMW";
+      let myFirstName = "Shiva";
+
+      function getMyCarData() {
+        console.log(myCarName);
+      }
+
+      function getMyDetails() {
+        var myAddress = "Bangalore";
+        getMyAddress();
+        function getMyAddress() {
+          // console.log(myAddress);
+        }
+
+        // console.log(myAddress);
+      }
+      getMyDetails();
+
+      //   Global Execution Context
+      // all the variable and it will assign undefined
+      // it will store all the function code
+      // myCarName : undefined
+      // myFirstName : undefined
+      // getMyCarData : function
+      // What data it will not store in Global Execution Context
+      //  The Code inside the function
+
+      //  OOPs
+      //  Four Main pillars Of Object Oriented Programing
+      //  1 encasulation
+      //  2 inheritance 
+      //  polymorphism
+      // Abstraction
+
+      // Encasulation -- wrapping up the data (varibles and methods) in a single unit is called Encapsulation
+
+      //  3 ways of creating objects
+      // literal way
+      // es 5 OOP 2009
+      // function constructor
+      // es6 2015
+
+      let userModule = {
+        firstName: "John",
+        lastName: "Some Data",
+        address: "Bangalore",
+        email: "john@gmail.com",
+        password: "1234556",
+
+        login: function (email, password) {
+          if (this.email === email && this.password === password) {
+            console.log("Login Success");
+          }
+        },
+      };
+
+      // userModule.login('john@gmail','123456');
+
+      function user(firstName, email, password, phoneNumber) {
+        this.firstName = firstName;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+
+        this.login = function (email, password) {
+          if (this.email === email && this.password === password) {
+            console.log("Login Success");
+          }
+        };
+      }
+      // console.log()
+
+      let user1 = new user("john", "john@gmail.com", "123456", "9999999999");
+      let user2 = new user("shiva", "siva@gmail.com", "888888", "7659777777");
+      console.log(user1.firstName);
+
+      //Wrapping up the data ( variables and methods ) into single unit
+
+      // inheritance: aquring the properties (varibale) and methods from the constructor function
+
+      // Reduce Complexity
+      // Reuseability
+
+      // protype inheritance
+
+      user.prototype.logout = function () {
+        console.log("You are logout");
+      };
+      user.prototype.gender = "male";
+
+      let user3 = new user("shiva", "siva@gmail.com", "888888", "7659777777");
+      user3.logout();
+
+      console.log(user3);
+
+      // Abstration
+      //  Hiding the implementation and showing the functionaition
+      // ATM
+      // Security Purpose
+      // every one can see the
+      // Clouser
+
+      // Clouser
+      // inner function  will bind the outer function scope
+      // if the inner function is returned it still has the parent scope access
+
+      function ATM() {
+        let accountNumber = 7666783663;
+        let ammount = 100000;
+
+        function withdrawBalance(withdrawAmmount) {
+          if (withdrawAmmount) {
+            if (withdrawAmmount > ammount) {
+              console.log("you have less funds to withdraw");
+            } else {
+              console.log(
+                `withdrawed ${withdrawAmmount} and balance is ${
+                  ammount - withdrawAmmount
+                }`
+              );
+            }
+          }
+        }
+
+        return withdrawBalance;
+      }
+
+      let innerFunc = ATM();
+      innerFunc(1000);
+
+      // Polymorphism
+      // Poly is greek word
+      // poly means many
+      // morphism things
+      // Many things
+
+      //  operator overloading
+      // overridding
+      // +
+      let finalStr = "Mr" + "Sharma";
+      let total = 23 + 44;
+
+      function sum(a, b) {
+        console.log(a + b);
+      }
+
+      // function sum(a, b, c) {
+      //   console.log(a + b + c);
+      // }
+
+      sum(12, 34);
+    </script>
+  </body>
+</html>
